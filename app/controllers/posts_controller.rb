@@ -17,7 +17,12 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.create(post_params)
-        redirect_to post_path(@post)
+        if @post.save
+            flash[:notice] = "Post was successfully created"
+            redirect_to post_path(@post)
+        else
+            redirect_to new
+        end
     end
 
     def edit
@@ -25,7 +30,8 @@ class PostsController < ApplicationController
     end
 
     def update
-
+        @post.update(post_params)
+        redirect_to post_path(@post)
     end
 
     def destroy

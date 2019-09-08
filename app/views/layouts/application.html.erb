@@ -20,6 +20,12 @@
     <%= link_to "Log in", login_path %> or <%= link_to "Sign up", new_user_path %>
   <% end %>
   </nav>
+<% flash.each do |name, msg| %>
+    <ul>
+     <li><%= msg %></li>
+    </ul>
+<% end %>
+
     <%= yield %>
   </body>
 </html>
