@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'admin/dashboard'
+  get 'admin/stats'
+  get 'admin/settings'
   resources :categories
   resources :comments
   resources :posts
