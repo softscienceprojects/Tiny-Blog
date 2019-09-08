@@ -27,7 +27,7 @@ skip_before_action :require_login, only: [:new, :create]
     end
 
     def destroy
-        
+        @user.delete
     end
 
     private
@@ -41,6 +41,6 @@ skip_before_action :require_login, only: [:new, :create]
     end
 
     def user_params
-        params.require(:user).permit(:name, :password, :password_confirmation)
+        params.require(:user).permit(:username, :password, :password_confirmation)
     end
 end
