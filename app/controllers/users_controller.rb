@@ -4,7 +4,9 @@ before_action :require_login
 skip_before_action :require_login, only: [:new, :create]
 
     def show
-
+        if session[:user_id] != @user.id
+            redirect_to root_path
+        end
     end
 
     def new
