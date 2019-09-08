@@ -13,7 +13,7 @@
 <h3>Tiny Blog</h3>
 
   <nav>
-  <%= link_to "Home", root_path %>
+  <%= link_to "Home", root_path %>  |  <%= link_to "About", 'about' %>
   <% if logged_in? %>
     <%= link_to "Your profile", user_path(session[:user_id]) %>  <%= link_to "Logout", logout_path, method: :post %>
   <% else %>
